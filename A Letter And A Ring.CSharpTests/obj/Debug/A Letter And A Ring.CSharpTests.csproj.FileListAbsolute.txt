@@ -1,0 +1,15 @@
+S:\A Letter And A Ring\A Letter And A Ring\A Letter And A Ring.CSharpTests\bin\Debug\A Letter And A Ring.CSharpTests.dll
+S:\A Letter And A Ring\A Letter And A Ring\A Letter And A Ring.CSharpTests\bin\Debug\A Letter And A Ring.CSharpTests.pdb
+S:\A Letter And A Ring\A Letter And A Ring\A Letter And A Ring.CSharpTests\bin\Debug\Assembly-CSharp.dll
+S:\A Letter And A Ring\A Letter And A Ring\A Letter And A Ring.CSharpTests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+S:\A Letter And A Ring\A Letter And A Ring\A Letter And A Ring.CSharpTests\bin\Debug\nunit.framework.dll
+S:\A Letter And A Ring\A Letter And A Ring\A Letter And A Ring.CSharpTests\bin\Debug\UnityEngine.dll
+S:\A Letter And A Ring\A Letter And A Ring\A Letter And A Ring.CSharpTests\bin\Debug\UnityEditor.dll
+S:\A Letter And A Ring\A Letter And A Ring\A Letter And A Ring.CSharpTests\bin\Debug\Mono.Cecil.dll
+S:\A Letter And A Ring\A Letter And A Ring\A Letter And A Ring.CSharpTests\bin\Debug\Assembly-CSharp.pdb
+S:\A Letter And A Ring\A Letter And A Ring\A Letter And A Ring.CSharpTests\bin\Debug\nunit.framework.xml
+S:\A Letter And A Ring\A Letter And A Ring\A Letter And A Ring.CSharpTests\bin\Debug\UnityEngine.xml
+S:\A Letter And A Ring\A Letter And A Ring\A Letter And A Ring.CSharpTests\bin\Debug\UnityEditor.xml
+S:\A Letter And A Ring\A Letter And A Ring\A Letter And A Ring.CSharpTests\obj\Debug\A Letter And A Ring.CSharpTests.csprojResolveAssemblyReference.cache
+S:\A Letter And A Ring\A Letter And A Ring\A Letter And A Ring.CSharpTests\obj\Debug\A Letter And A Ring.CSharpTests.dll
+S:\A Letter And A Ring\A Letter And A Ring\A Letter And A Ring.CSharpTests\obj\Debug\A Letter And A Ring.CSharpTests.pdb
