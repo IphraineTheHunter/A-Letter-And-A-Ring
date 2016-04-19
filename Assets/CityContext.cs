@@ -62,5 +62,6 @@ public class CityContext : MonoBehaviour
     internal static void Tick()
     {
         POIGoal.Tick();
+        ActiveEvent.Tick();
     }
 }

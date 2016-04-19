@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using UnityEngine;
 
 namespace Assets
 {
@@ -71,6 +72,7 @@ namespace Assets
                 goal.age++;
                 if (goal.age >= goal.timeLimit)
                 {
+                    Debug.Log("POI goal failed");
                     goal.Fail();
                 }
             }

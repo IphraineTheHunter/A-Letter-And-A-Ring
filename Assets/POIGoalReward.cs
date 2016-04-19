@@ -33,7 +33,7 @@ namespace Assets
             {
                 ActiveEvent ae = poi.affectedByEvents.First();
                 relatedActiveEvents.Add(ae);
-                activeEventChanges.Add(ae.power);
+                activeEventChanges.Add(ae.power/2);
             }
             
         }
@@ -54,7 +54,6 @@ namespace Assets
             foreach (PersonOfInterest poi in goal.involvedPeople)
             {
                 AwardTo(poi);
-                poi.ChooseNewGoal();
             }
         }
     }

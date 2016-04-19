@@ -24,6 +24,10 @@ namespace Assets
         public void End()
         {
             CityContext.context._events.Remove(this);
+            foreach (PersonOfInterest poi in CityContext.context._pois)
+            {
+                poi.affectedByEvents.Remove(this);
+            }
         }
 
         public static void Tick()
@@ -35,7 +39,7 @@ namespace Assets
                     activeEvent.power += 5;
                 }
             }
-            if (CityContext.context.random.RollXdY(1, 100) < 10)
+            if (CityContext.context.random.RollXdY(1, 100) < 7)
             {
                 ActiveEvent ae = new ActiveEvent();
                 ae.name = "Toxite Riots";
