@@ -25,7 +25,7 @@ public class GoalTests {
         poi = new PersonOfInterest();
         activeEvent = new ActiveEvent();
         poi.affectedByEvents.Add(activeEvent);
-        goal = new POIGoal(poi, POIGoal.Type.Event);
+        goal = new POIGoal(poi);
         poi.currentGoal = goal;
         quest = new Quest();
         poi.offeredQuest = quest;

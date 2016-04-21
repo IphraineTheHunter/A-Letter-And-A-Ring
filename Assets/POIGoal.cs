@@ -6,8 +6,6 @@ using UnityEngine;
 
 namespace Assets
 {
-    
-
     public class POIGoal
     {
         private int progress;
@@ -20,15 +18,12 @@ namespace Assets
         private int age;
         private int timeLimit;
 
-        public Type type;
-        public enum Type { Title, Power, Wealth, Lackey, Event }
-
         public POIGoal()
         {
 
         }
 
-        public POIGoal(PersonOfInterest poi, Type goalType)
+        public POIGoal(PersonOfInterest poi)
         {
             progress = 0;
             required = 100;
@@ -36,8 +31,7 @@ namespace Assets
             age = 0;
             timeLimit = 10;
             involvedPeople.Add(poi);
-            type = goalType;
-            goalReward = new POIGoalReward(poi, this, goalType);
+            goalReward = new POIGoalReward(poi, this);
 
             CityContext.context._goals.Add(this);
         }

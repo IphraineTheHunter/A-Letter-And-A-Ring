@@ -11,8 +11,6 @@ public class CityContext : MonoBehaviour
     public List<ActiveEvent> _events = new List<ActiveEvent>();
     public RandomCustom random = new RandomCustom();
     public List<POIGoal> _goals = new List<POIGoal>();
-    public List<Title> _titles = new List<Title>();
-    public PlayerMap _playerMap = new PlayerMap();
 
     void Awake()
     {
@@ -65,6 +63,5 @@ public class CityContext : MonoBehaviour
     {
         POIGoal.Tick();
         ActiveEvent.Tick();
-        Title.Tick();
     }
 }

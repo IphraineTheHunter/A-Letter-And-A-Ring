@@ -28,8 +28,6 @@ namespace Assets
             offerer.currentGoal.Progress(difficulty);
 
             //reward player
-            offerer.wealth -= difficulty * 80;
-            CityContext.context._playerMap.wealth += difficulty * 80;
 
             CityContext.Tick();
 

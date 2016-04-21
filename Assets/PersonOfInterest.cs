@@ -13,8 +13,6 @@ namespace Assets
         public int prestige;
         public int wealth;
         public Quest offeredQuest;
-        public List<Title> heldTitles = new List<Title>();
-        public List<Lackey> lackeys = new List<Lackey>();
 
         public PersonOfInterest()
         {
@@ -40,27 +38,13 @@ namespace Assets
 
         public POIGoal ChooseNewGoal()
         {
-            POIGoal.Type goalType;
-            if (affectedByEvents.Where(x => x.power > 70).Count() > 0)
-            {
-                goalType = POIGoal.Type.Event;
-            }
-            else if (wealth < 20)
-            {
-                goalType = POIGoal.Type.Wealth;
-            }
-            else
-            {
-                goalType = POIGoal.Type.Title;
-            }
-            currentGoal = new POIGoal(this, goalType);
+            currentGoal = new POIGoal(this);
             return currentGoal;
         }
 
         public Quest OfferNewQuest()
         {
             offeredQuest = new Quest(this);
-            wealth -= offeredQuest.difficulty * 20;
             return offeredQuest;
         }
     }
