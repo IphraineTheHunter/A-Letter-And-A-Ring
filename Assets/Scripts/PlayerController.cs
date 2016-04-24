@@ -2,30 +2,30 @@
 using System.Collections;
 
 public class PlayerController : MonoBehaviour {
-	/*void Update()
-	{
-		
-	}*/
-
-	//public float speed;
-	//private Vector3 targetPosition;
-
-	public Transform destination;
+	
 	private NavMeshAgent player;
-//	private Rigidbody player;
+
+
+	void PlayIdle(){
+		Debug.Log ("Idle Animation Playing");
+	}
+
+	void PlayMovement(){
+		Debug.Log ("Running Animation Playing");
+	}
+
+	void RunAnimations()
+	{
+		if ( player.remainingDistance < 1.0 ) {
+			PlayIdle ();
+		} else {
+			PlayMovement ();
+		}
+		//Debug.Log(player.remainingDistance);
+	}
 
 	void ProcessMovement()
 	{
-		/* float moveHorizontal = Input.GetAxis ("Horizontal");
-		float moveVertical = Input.GetAxis ("Vertical");
-		Vector3 movement = new Vector3 (moveHorizontal, 0, moveVertical);
-
-		if (moveHorizontal == 0 && moveVertical == 0) {
-			player.AddForce (movement);
-		} else {
-			player.AddForce (movement * speed);
-		}*/
-
 		if (Input.GetMouseButtonDown(0))
 		{
 			Ray screenRay = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -36,9 +36,6 @@ public class PlayerController : MonoBehaviour {
 				player.SetDestination(hit.point);
 			}
 		}
-
-		//player.transform.position = Vector3.MoveTowards(transform.position, targetPosition, Time.deltaTime * speed);
-
 	}
 
 	void Start()
@@ -48,8 +45,9 @@ public class PlayerController : MonoBehaviour {
 
 
 
-	void FixedUpdate()
+	void Update()
 	{
 		ProcessMovement ();
+		RunAnimations ();
 	}
 }
