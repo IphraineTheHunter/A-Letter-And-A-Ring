@@ -13,11 +13,13 @@
     <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <TargetFrameworkProfile>Unity Subset v3.5</TargetFrameworkProfile>
-    <CompilerResponseFile></CompilerResponseFile>
+    <CompilerResponseFile>
+    </CompilerResponseFile>
     <UnityProjectType>Game:1</UnityProjectType>
     <UnityBuildTarget>StandaloneWindows:5</UnityBuildTarget>
     <UnityVersion>5.3.4f1</UnityVersion>
-    <RootNamespace></RootNamespace>
+    <RootNamespace>
+    </RootNamespace>
     <LangVersion Condition=" '$(VisualStudioVersion)' != '10.0' ">4</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -58,6 +60,12 @@
     <Reference Include="UnityEngine.Networking">
       <HintPath>Library\UnityAssemblies\UnityEngine.Networking.dll</HintPath>
     </Reference>
+    <Reference Include="UnityEngine.Networking">
+      <HintPath>Library\UnityAssemblies\UnityEngine.Networking.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>Library\UnityAssemblies\UnityEngine.UI.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEditor">
       <HintPath>Library\UnityAssemblies\UnityEditor.dll</HintPath>
     </Reference>
@@ -75,21 +83,22 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\ActiveEvent.cs" />
-    <Compile Include="Assets\CityContext.cs" />
-    <Compile Include="Assets\Lackey.cs" />
-    <Compile Include="Assets\MapMenuScript.cs" />
-    <Compile Include="Assets\POIGoal.cs" />
-    <Compile Include="Assets\POIGoalReward.cs" />
-    <Compile Include="Assets\PersonOfInterest.cs" />
-    <Compile Include="Assets\Quest.cs" />
-    <Compile Include="Assets\RandomCustom.cs" />
     <Compile Include="Assets\Scripts\CameraController.cs" />
     <Compile Include="Assets\Scripts\Combat\Injury.cs" />
     <Compile Include="Assets\Scripts\Combat\combatStats.cs" />
     <Compile Include="Assets\Scripts\Navigation.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
-    <Compile Include="Assets\Title.cs" />
+    <Compile Include="Assets\Scripts\_cityScripts\ActiveEvent.cs" />
+    <Compile Include="Assets\Scripts\_cityScripts\CityContext.cs" />
+    <Compile Include="Assets\Scripts\_cityScripts\Lackey.cs" />
+    <Compile Include="Assets\Scripts\_cityScripts\MapMenuScript.cs" />
+    <Compile Include="Assets\Scripts\_cityScripts\PlayerMap.cs" />
+    <Compile Include="Assets\Scripts\_cityScripts\POIGoal.cs" />
+    <Compile Include="Assets\Scripts\_cityScripts\POIGoalReward.cs" />
+    <Compile Include="Assets\Scripts\_cityScripts\PersonOfInterest.cs" />
+    <Compile Include="Assets\Scripts\_cityScripts\Quest.cs" />
+    <Compile Include="Assets\Scripts\_cityScripts\RandomCustom.cs" />
+    <Compile Include="Assets\Scripts\_cityScripts\Title.cs" />
     <Compile Include="Assets\UnityTestTools\Assertions\AssertionComponent.cs" />
     <Compile Include="Assets\UnityTestTools\Assertions\AssertionException.cs" />
     <Compile Include="Assets\UnityTestTools\Assertions\Assertions.cs" />
