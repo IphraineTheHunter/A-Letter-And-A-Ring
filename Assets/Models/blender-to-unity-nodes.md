@@ -1,10 +1,12 @@
 # Notes for importing from Blender to Unity3D
 
 ## Importing the models into Unity3D from Blender
-By default, Unity3D imports .blend files automatically, with little to no issues. If the model has no armature nor animations, such as a building or a rock, simply saving the file as a .blend does the job.
+By default, Unity3D imports .blend files automatically, with little to no issues. If the model has no armature nor animations, such as a building or a rock, simply saving the file as a .blend does the job. Sometimes there are issues importing the .blend file into Unity. In which case, it is easiest to just export it to a .fbx
 
-However, if you need animations or any sort of rigging to be imported into Unity3D, you will need to export it to a .fbx
-- By default, all of the normals are flipped when exporting to a .fbx, resulting in the model being "see through" in Unity3D. It's an effect similar to when you glitch inside of a building and look at stuff from inside of it.
+**While direct imports of .blend files works most of the time, I will be using .fbx files for the majority of my models, to avoid any import issues**
+
+However, if you need animations or any sort of rigging to be imported into Unity3D, you will **have** to export it to a .fbx
+- At times, all of the normals are flipped when exporting to a .fbx, resulting in the model being "see through" in Unity3D. It's an effect similar to when you glitch inside of a building and look at stuff from inside of it.
 - The fix for this is to simply open and select the mesh in Blender, go into edit mode, under the "Shading / UVs" tab in Blender, and click the "reverse direction" button under normals.
 
 ## Rigging and Animation
