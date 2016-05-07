@@ -57,6 +57,7 @@
      <Compile Include="Assets\Scripts\_cityScripts\POIGoal.cs" />
      <Compile Include="Assets\Scripts\_cityScripts\POIGoalReward.cs" />
      <Compile Include="Assets\Scripts\_cityScripts\PersonOfInterest.cs" />
+     <Compile Include="Assets\Scripts\_cityScripts\PlayerMap.cs" />
      <Compile Include="Assets\Scripts\_cityScripts\Quest.cs" />
      <Compile Include="Assets\Scripts\_cityScripts\RandomCustom.cs" />
      <Compile Include="Assets\Scripts\_cityScripts\Title.cs" />
