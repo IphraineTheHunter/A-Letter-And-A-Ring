@@ -16,4 +16,9 @@ In Blender, it is possible to separate out different animation layers. However, 
 
 I will test this out with future models, and see if I can make it import all the animation layers. In the mean time, this will suffice, as it is a method that is implemented by others on a fairly regular basis in their games.
 
+All animations are held in seperate .fbx files under `Assets/Models/Characters/Animations/`
+
+## Issues with Spinning during animations on a Nav Mesh Agent
+The fix is simple. Untick the "Apply root motion" under the animator component in the objects inspector view.
+
 -Dast
