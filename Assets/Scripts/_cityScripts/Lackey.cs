@@ -1,6 +1,7 @@
 ﻿using System;
+using Assets.Scripts._PersonOfInterest;
 
-namespace Assets
+namespace Assets.Scripts._cityScripts
 {
     public class Lackey
     {

@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using Assets;
+using Assets.Scripts._PersonOfInterest;
 
 public class MapMenuScript : MonoBehaviour {
 

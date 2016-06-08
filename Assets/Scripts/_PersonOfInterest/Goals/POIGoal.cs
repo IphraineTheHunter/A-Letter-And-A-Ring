@@ -3,41 +3,44 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using UnityEngine;
+using Assets.Scripts._cityScripts;
 
-namespace Assets
+namespace Assets.Scripts._PersonOfInterest
 {
-    public class POIGoal
+    public abstract class POIGoal
     {
+        public static List<POIGoal> _all = new List<POIGoal>();
         private int progress;
         private int required;
-        public int power;
-        public POIGoalReward goalReward;
-        public List<PersonOfInterest> involvedPeople = new List<PersonOfInterest>();
-        public ActiveEvent eventToEliminate;
+        public Reward goalReward;
+        public PersonOfInterest holder;
 
         private int age;
-        private int timeLimit;
+        internal int timeLimit;
 
-        public Type type;
-        public enum Type { Title, Power, Wealth, Lackey, Event }
+        //public Type type;
+        //public enum Type { Title, Power, Wealth, Lackey, Event, Project}
 
-        public POIGoal()
+        public abstract class Reward
         {
+            public POIGoal goal;
+            public int prestige;
+            public int cost;
+            public int tyrannyChange;
+
+            public abstract void Apply();
 
         }
 
-        public POIGoal(PersonOfInterest poi, Type goalType)
+        public POIGoal(PersonOfInterest poi)
         {
             progress = 0;
             required = 100;
-            power = 25;
             age = 0;
             timeLimit = 10;
-            involvedPeople.Add(poi);
-            type = goalType;
-            goalReward = new POIGoalReward(poi, this, goalType);
+            holder = poi;
 
-            CityContext.context._goals.Add(this);
+            _all.Add(this);
         }
 
         public virtual void Progress(int change)
@@ -47,6 +50,11 @@ namespace Assets
             {
                 Complete();
             }
+        }
+
+        public int getProgress()
+        {
+            return progress;
         }
 
         private void Complete()
@@ -62,21 +70,17 @@ namespace Assets
 
         private void End()
         {
-            CityContext.context._goals.Remove(this);
-            foreach (PersonOfInterest poi in involvedPeople)
-            {
-                poi.ChooseNewGoal();
-            }
+            _all.Remove(this);
+            holder.ChooseNewGoal();
         }
 
         public static void Tick()
         {
-            foreach (POIGoal goal in CityContext.context._goals.ToArray())
+            foreach (POIGoal goal in POIGoal._all.ToArray())
             {
                 goal.age++;
                 if (goal.age >= goal.timeLimit)
                 {
-                    Debug.Log("POI goal failed");
                     goal.Fail();
                 }
             }

@@ -2,16 +2,13 @@
 using System.Collections.Generic;
 using Assets;
 using System;
+using Assets.Scripts._cityScripts;
+using Assets.Scripts._PersonOfInterest;
 
 public class CityContext : MonoBehaviour
 {
     public static CityContext context = null;
-    public List<PersonOfInterest> _pois = new List<PersonOfInterest>();
-    public List<Quest> _quests = new List<Quest>();
-    public List<ActiveEvent> _events = new List<ActiveEvent>();
-    public RandomCustom random = new RandomCustom();
-    public List<POIGoal> _goals = new List<POIGoal>();
-    public List<Title> _titles = new List<Title>();
+
     public PlayerMap _playerMap = new PlayerMap();
 
     void Awake()
@@ -30,9 +27,14 @@ public class CityContext : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        new ActiveEvent();
-        new PersonOfInterest();
-        new PersonOfInterest();
+        City city = new City();
+        new ActiveEvent(city);
+        Greedy greedy = new Greedy(city);
+        greedy.name = "Scrooge McDuck";
+        Pride pride = new Pride(city);
+        pride.name = "Scar";
+        Humane humane = new Humane(city);
+        humane.name = "Muhatma Ghandi";
 
     }
 
@@ -44,19 +46,23 @@ public class CityContext : MonoBehaviour
 
     void OnGUI()
     {
-        for (int questIndex = 0; questIndex < _quests.Count; questIndex++)
+        string labelText = "Your Wealth: " + _playerMap.wealth;
+        GUI.Label(new Rect(200, 100, 100, 30), labelText);
+
+        for (int questIndex = 0; questIndex < Quest._all.Count; questIndex++)
         {
-            Quest quest = _quests[questIndex];
+            Quest quest = Quest._all[questIndex];
             string buttonText = string.Format("Quest for {0}", quest.offerer.name);
-            if (GUI.Button(new Rect(10, 100 + questIndex * 30, 200, 30), buttonText))
+            if (GUI.Button(new Rect(15, 100 + questIndex * 30, 200, 30), buttonText))
             {
+                quest.Accept();
                 quest.Complete();
             }
         }
-        for (int eventIndex = 0; eventIndex < _events.Count; eventIndex++ )
+        for (int eventIndex = 0; eventIndex < ActiveEvent._all.Count; eventIndex++ )
         {
-            ActiveEvent activeEvent = _events[eventIndex];
-            string labelText = activeEvent.name + " - " + activeEvent.power;
+            ActiveEvent activeEvent = ActiveEvent._all[eventIndex];
+            labelText = activeEvent.name + " - " + activeEvent.power;
             GUI.Label(new Rect(300, 100 + eventIndex * 30, 100, 30), labelText);
         }
     }

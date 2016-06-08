@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Assets
+namespace Assets.Scripts._cityScripts
 {
     public class RandomCustom
     {
+        public static RandomCustom instance = new RandomCustom();
         public virtual int RollXdY(int x, int y)
         {
             int sum = 0;
