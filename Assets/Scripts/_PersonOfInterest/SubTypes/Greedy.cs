@@ -17,7 +17,7 @@ namespace Assets.Scripts._PersonOfInterest
         {
             if (wealth < 100)
             {
-                currentGoal = new WealthGoal(this, 300);
+                currentGoal = new WealthGoal(this);
             }
             else if (city.activeEvents.Any(x => x.power * x.effect.wealthChange < -300))
             {

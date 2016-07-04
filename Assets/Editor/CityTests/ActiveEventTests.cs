@@ -20,7 +20,7 @@ namespace Assets.CityTests
         public void ActiveEventWeakened()
         {
             RandomCustom rand = Substitute.For<RandomCustom>();
-            rand.RollXdY(1, 100).Returns(0);
+            rand.PercentChanceOfSuccess(Arg.Any<int>()).Returns(true);
             RandomCustom.instance = rand;
 
             City city = new City();
@@ -41,7 +41,7 @@ namespace Assets.CityTests
         public void ActiveEventEnds()
         {
             RandomCustom rand = Substitute.For<RandomCustom>();
-            rand.RollXdY(1, 100).Returns(100);
+            rand.PercentChanceOfSuccess(Arg.Any<int>()).Returns(true);
             RandomCustom.instance = rand;
 
             City city = new City();

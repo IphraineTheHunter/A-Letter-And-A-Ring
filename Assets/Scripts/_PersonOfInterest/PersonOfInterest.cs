@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Assets.Scripts._cityScripts;
+using Assets.Scripts._cityScripts.Quests;
 
 namespace Assets.Scripts._PersonOfInterest
 {
@@ -38,7 +39,7 @@ namespace Assets.Scripts._PersonOfInterest
         public Quest OfferNewQuest()
         {
             //ToDo: choose a varying difficulty
-            offeredQuest = new Quest(this, 25);
+            offeredQuest = currentGoal.GetNextQuest(this, 100);
             return offeredQuest;
         }
     }

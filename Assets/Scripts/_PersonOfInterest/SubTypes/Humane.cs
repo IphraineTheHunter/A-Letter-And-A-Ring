@@ -27,7 +27,7 @@ namespace Assets.Scripts._PersonOfInterest
             }
             else if (wealth < 20)
             {
-                currentGoal = new WealthGoal(this, 180);
+                currentGoal = new WealthGoal(this);
             }
             else if (city.projects.Any(x => x.type == Project.Type.Public))
             {

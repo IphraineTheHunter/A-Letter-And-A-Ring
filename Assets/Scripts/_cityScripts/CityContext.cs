@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Assets;
 using System;
 using Assets.Scripts._cityScripts;
+using Assets.Scripts._cityScripts.Quests;
 using Assets.Scripts._PersonOfInterest;
 
 public class CityContext : MonoBehaviour
@@ -28,8 +29,10 @@ public class CityContext : MonoBehaviour
     void Start()
     {
         City city = new City();
+        
         new ActiveEvent(city);
         Greedy greedy = new Greedy(city);
+        city.title = new Title(greedy);
         greedy.name = "Scrooge McDuck";
         Pride pride = new Pride(city);
         pride.name = "Scar";
@@ -52,7 +55,7 @@ public class CityContext : MonoBehaviour
         for (int questIndex = 0; questIndex < Quest._all.Count; questIndex++)
         {
             Quest quest = Quest._all[questIndex];
-            string buttonText = string.Format("Quest for {0}", quest.offerer.name);
+            string buttonText = string.Format("{0} - {1}", quest.offerer.name, quest.name);
             if (GUI.Button(new Rect(15, 100 + questIndex * 30, 200, 30), buttonText))
             {
                 quest.Accept();

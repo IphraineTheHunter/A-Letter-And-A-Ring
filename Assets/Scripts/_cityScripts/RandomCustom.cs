@@ -18,5 +18,10 @@ namespace Assets.Scripts._cityScripts
             }
             return sum;
         }
+
+        public virtual bool PercentChanceOfSuccess(int percent)
+        {
+            return (RollXdY(1, 100) < percent);
+        }
     }
 }

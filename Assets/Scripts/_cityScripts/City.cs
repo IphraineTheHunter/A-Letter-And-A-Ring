@@ -19,7 +19,7 @@ namespace Assets.Scripts._cityScripts
 
         public void Tick()
         {
-            if (RandomCustom.instance.RollXdY(1, 100) < 7)
+            if (RandomCustom.instance.PercentChanceOfSuccess(7))
             {
                 ActiveEvent ae = new ActiveEvent(this);
                 ae.name = "Toxite Riots";

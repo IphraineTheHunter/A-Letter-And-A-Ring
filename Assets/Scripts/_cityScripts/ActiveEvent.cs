@@ -45,7 +45,7 @@ namespace Assets.Scripts._cityScripts
         public void Reduce(int goalPower)
         {
             power -= goalPower;
-            if (RandomCustom.instance.RollXdY(1, 100) > power)
+            if (RandomCustom.instance.PercentChanceOfSuccess(100 - power))
             {
                 End();
             }

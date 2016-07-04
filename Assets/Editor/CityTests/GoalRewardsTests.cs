@@ -33,8 +33,9 @@ namespace Assets.CityTests
         [Test]
         public void WealthGoalReward()
         {
-            poi.currentGoal = new WealthGoal(poi, 300);
+            poi.currentGoal = new WealthGoal(poi);
             poi.wealth = 0;
+            poi.currentGoal.AddEffortPoints(100);
 
             poi.currentGoal.Progress(100);
 
@@ -51,6 +52,7 @@ namespace Assets.CityTests
         {
             ActiveEvent ae = new ActiveEvent(city);
             poi.currentGoal = new EventGoal(poi, ae);
+            poi.currentGoal.AddEffortPoints(100);
             ae.power = 100;
 
             poi.currentGoal.Progress(100);
@@ -71,6 +73,7 @@ namespace Assets.CityTests
             Greedy oldOwner = new Greedy(city);
             Title title = new Title(oldOwner);
             poi.currentGoal = new TitleGoal(poi, title);
+            poi.currentGoal.AddEffortPoints(100);
 
             CollectionAssert.Contains(oldOwner.heldTitles, title);
 
@@ -92,6 +95,7 @@ namespace Assets.CityTests
             Project project = new Project(city);
             poi.currentGoal = new ProjectGoal(poi, project);
             poi.prestige = 0;
+            poi.currentGoal.AddEffortPoints(100);
 
             poi.currentGoal.Progress(100);
 

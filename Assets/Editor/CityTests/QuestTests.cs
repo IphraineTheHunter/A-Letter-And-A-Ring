@@ -36,8 +36,8 @@ namespace Assets.CityTests
 
             poi.offeredQuest.Accept();
 
-            Assert.AreEqual(-125, poi.wealth);
-            Assert.AreEqual(125, CityContext.context._playerMap.wealth);
+            Assert.AreEqual(-100, poi.wealth);
+            Assert.AreEqual(100, CityContext.context._playerMap.wealth);
         }
 
         /*
@@ -49,6 +49,7 @@ namespace Assets.CityTests
         public void CompletingAQuestProgressesTheOfferersGoal()
         {
             Assert.AreEqual(0, poi.currentGoal.getProgress());
+            poi.offeredQuest.difficulty = 25;
 
             poi.offeredQuest.Complete();
 

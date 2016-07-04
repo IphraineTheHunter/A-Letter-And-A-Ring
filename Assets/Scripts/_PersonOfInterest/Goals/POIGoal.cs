@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using UnityEngine;
+using Assets.Scripts._cityScripts.Quests;
 using Assets.Scripts._cityScripts;
 
 namespace Assets.Scripts._PersonOfInterest
@@ -17,6 +18,7 @@ namespace Assets.Scripts._PersonOfInterest
 
         private int age;
         internal int timeLimit;
+        internal int effortPoints;
 
         //public Type type;
         //public enum Type { Title, Power, Wealth, Lackey, Event, Project}
@@ -39,6 +41,7 @@ namespace Assets.Scripts._PersonOfInterest
             age = 0;
             timeLimit = 10;
             holder = poi;
+            effortPoints = 0;
 
             _all.Add(this);
         }
@@ -50,6 +53,11 @@ namespace Assets.Scripts._PersonOfInterest
             {
                 Complete();
             }
+        }
+
+        public void AddEffortPoints(int effort)
+        {
+            effortPoints += effort;
         }
 
         public int getProgress()
@@ -83,6 +91,29 @@ namespace Assets.Scripts._PersonOfInterest
                 {
                     goal.Fail();
                 }
+            }
+        }
+
+        public abstract Quest GetNextQuest(PersonOfInterest poi, int difficulty);
+
+        protected Quest.Type getRandomQuestType(int deliverWeight, int eliminateWeight, int obtainWeight, int persuadeWeight)
+        {
+            int choice = RandomCustom.instance.RollXdY(1, deliverWeight + eliminateWeight + obtainWeight + persuadeWeight);
+            if (choice <= deliverWeight)
+            {
+                return Quest.Type.Deliver;
+            }
+            else if (choice <= deliverWeight + eliminateWeight)
+            {
+                return Quest.Type.Eliminate;
+            }
+            else if (choice <= deliverWeight + eliminateWeight + obtainWeight)
+            {
+                return Quest.Type.Obtain;
+            }
+            else
+            {
+                return Quest.Type.Persuade;
             }
         }
     }
