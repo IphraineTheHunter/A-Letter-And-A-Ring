@@ -47,7 +47,7 @@ namespace Assets.POITests
         [Test]
         public void CostlyEvent()
         {
-            poi.wealth = 300;
+            poi.wealth = 700;
             ActiveEvent ae = new ActiveEvent(city);
             ae.power = 100;
             ae.effect.wealthChange = -100;
@@ -69,7 +69,7 @@ namespace Assets.POITests
         [Test]
         public void ManyCostlyEvents()
         {
-            poi.wealth = 300;
+            poi.wealth = 700;
             ActiveEvent ae1 = new ActiveEvent(city);
             ActiveEvent ae2 = new ActiveEvent(city);
             ActiveEvent ae3 = new ActiveEvent(city);
@@ -97,7 +97,7 @@ namespace Assets.POITests
         [Test]
         public void Titles()
         {
-            poi.wealth = 300;
+            poi.wealth = 700;
             ActiveEvent ae = new ActiveEvent(city);
             ae.power = 70;
             ae.effect.wealthChange = -1;

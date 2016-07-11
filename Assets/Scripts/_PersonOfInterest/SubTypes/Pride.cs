@@ -21,7 +21,7 @@ namespace Assets.Scripts._PersonOfInterest
                 ActiveEvent chosenEvent = city.activeEvents.Where(x => x.power > 60).OrderByDescending(x => x.power).First();
                 currentGoal = new EventGoal(this, chosenEvent);
             }
-            else if (wealth < 20)
+            else if (wealth < 150)
             {
                 currentGoal = new WealthGoal(this);
             }

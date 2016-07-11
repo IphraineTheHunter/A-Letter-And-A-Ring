@@ -22,7 +22,7 @@ namespace Assets.Scripts._PersonOfInterest
                     .OrderBy(x => x.effect.powerChange).First();
                 currentGoal = new EventGoal(this, chosenEvent);
             }
-            else if (wealth < 20)
+            else if (wealth < 150)
             {
                 currentGoal = new WealthGoal(this);
             }

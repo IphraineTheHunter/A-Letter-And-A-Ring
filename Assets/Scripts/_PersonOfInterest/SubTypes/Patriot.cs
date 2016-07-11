@@ -20,7 +20,7 @@ namespace Assets.Scripts._PersonOfInterest
                 //TODO: intelligently pick which open conquest project to join
                 currentGoal = new ProjectGoal(this, city.projects.Where(x => x.type == Project.Type.Conquest).First());
             }
-            else if (wealth < 20)
+            else if (wealth < 150)
             {
                 currentGoal = new WealthGoal(this);
             }

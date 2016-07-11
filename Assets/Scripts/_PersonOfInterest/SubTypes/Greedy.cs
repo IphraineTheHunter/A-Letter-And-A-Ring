@@ -15,7 +15,7 @@ namespace Assets.Scripts._PersonOfInterest
         }
         public override POIGoal ChooseNewGoal()
         {
-            if (wealth < 100)
+            if (wealth < 500)
             {
                 currentGoal = new WealthGoal(this);
             }

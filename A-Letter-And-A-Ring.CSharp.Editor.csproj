@@ -151,6 +151,7 @@
   <ItemGroup>
     <Compile Include="Assets\Editor\CityTests\ActiveEventTests.cs" />
     <Compile Include="Assets\Editor\CityTests\GoalRewardsTests.cs" />
+    <Compile Include="Assets\Editor\CityTests\LackeyTests.cs" />
     <Compile Include="Assets\Editor\CityTests\QuestTests.cs" />
     <Compile Include="Assets\Editor\CityTests\TitleTests.cs" />
     <Compile Include="Assets\Editor\GoalTests\WealthGoalTests.cs" />

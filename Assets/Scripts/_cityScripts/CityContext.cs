@@ -74,5 +74,6 @@ public class CityContext : MonoBehaviour
     {
         POIGoal.Tick();
         ActiveEvent.Tick();
+        Lackey.Tick();
     }
 }

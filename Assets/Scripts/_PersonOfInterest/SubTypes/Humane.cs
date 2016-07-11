@@ -25,7 +25,7 @@ namespace Assets.Scripts._PersonOfInterest
             {
                 currentGoal = new TitleGoal(this, city.title.holder.heldTitles.OrderBy(x => x.wealthGain).First());
             }
-            else if (wealth < 20)
+            else if (wealth < 150)
             {
                 currentGoal = new WealthGoal(this);
             }

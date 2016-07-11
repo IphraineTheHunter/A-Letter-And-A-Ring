@@ -39,7 +39,7 @@ namespace Assets.CityTests
 
             poi.currentGoal.Progress(100);
 
-            Assert.AreEqual(300, poi.wealth);
+            Assert.AreEqual(3000, poi.wealth);
         }
 
         /*

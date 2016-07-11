@@ -60,6 +60,11 @@ namespace Assets.Scripts._PersonOfInterest
             effortPoints += effort;
         }
 
+        public int GetEffortPoints()
+        {
+            return effortPoints;
+        }
+
         public int getProgress()
         {
             return progress;
@@ -80,6 +85,7 @@ namespace Assets.Scripts._PersonOfInterest
         {
             _all.Remove(this);
             holder.ChooseNewGoal();
+            holder.OfferNewQuest();
         }
 
         public static void Tick()

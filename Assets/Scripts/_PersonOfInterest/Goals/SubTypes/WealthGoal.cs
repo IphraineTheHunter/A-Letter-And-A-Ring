@@ -32,7 +32,7 @@ namespace Assets.Scripts._PersonOfInterest.Goals.SubTypes
 
             public override void Apply()
             {
-                goal.holder.wealth += goal.effortPoints * 3;
+                goal.holder.wealth += goal.effortPoints * 30;
             }
         }
     }
