@@ -1,3 +1,5 @@
+//AUTHOR: Dast
+
 ﻿using UnityEngine;
 using System.Collections;
 
@@ -13,14 +15,16 @@ public class HumanAnimationController : MonoBehaviour {
 
 	void PlayRun(){
 		anim.SetBool ("IsRunning", true);
-		player.acceleration = 50.0f;
+		//player.speed = 6;
+		//player.acceleration = 50.0f;
 	}
 
 	void PlayWalk(){
 		anim.SetBool ("IsRunning", false);
-		player.acceleration = 8.0f;
+		//player.speed = 3.5f;
+		//player.acceleration = 8.0f;
 	}
-		
+
 	void PlayMovement() {
 		if (player.remainingDistance > 8.0) {
 			anim.SetBool ("IsRunning", true);

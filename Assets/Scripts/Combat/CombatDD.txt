@@ -1,0 +1,57 @@
+Combat Context:
+    Tick:
+    Given the game time has ticked <# seconds>
+        Call action events on all active members in the scene
+
+
+Injuries: How different injuries are handled
+    Incapacitated:
+    Given a Character has no more willpower
+        The Character will be incapacitated and no longer participates in combat
+    When a Character is rendered aid to restore willpower
+        The Character will then re-enter combat
+
+    Death:
+    Given a Character has no health
+        The Character is dead and their object is desDasted
+
+    Blind:
+    Given the Character is rendered blind
+    Character is rendered incapacitated and no longer participates in combat
+
+    Bleed:
+    Given a Character is bleeding
+    Start a bleed timer
+        And tick away at a Character's willpower
+    When the bleeding is stopped
+        Then the bleed timer will disappear
+        And the willpower stat will slowly regenerate
+    When the Character's willpower reaches zero
+        Character is rendered incapacitated and no longer participates in combat
+    
+
+    Crippled Limb:
+    Given a Character has a limb crippled
+        The Character's willpower will drop drastically
+    When a Character is rendered aid to repair the limb
+        The Character's willpower will return
+
+    Deaf:
+    Given a Character is rendered deaf
+        The Character's perceptiveness will drop harshly
+    When the Character is rendered aid to repair the deafness
+        The Character's perceptiveness will return to normal
+
+AI: Basic logic dictating combat by non-controllable characters
+    Choosing Target:
+    Given the Character has no Target
+    And is not low on health
+        The Character will select the closest enemy
+    Given a Character is making an attack
+    While the Target is out of range
+        The Character will then move towards the Target to initiate an attack during a tick
+    When the Target is in range
+        The Character will initiate an attack against the Target
+    When the Character's health is low
+        The Character will move away from attacking enemies when they come within range
+    
