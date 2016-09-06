@@ -3,53 +3,49 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Assets
+
+namespace Assets.Scripts._cityScripts
 {
     public class ActiveEvent
     {
-        public ActiveEvent()
+        public static List<ActiveEvent> _all = new List<ActiveEvent>();
+
+        public ActiveEvent(City city)
         {
             name = "Goblins";
-            CityContext.context._events.Add(this);
+            _all.Add(this);
             power = 70;
-            foreach (PersonOfInterest poi in CityContext.context._pois)
-            {
-                poi.affectedByEvents.Add(this);
-            }
+            this.city = city;
+            city.activeEvents.Add(this);
+            effect = new ActiveEventEffect();
         }
 
         public string name;
         public int power;
+        public ActiveEventEffect effect;
+        public City city;
 
         public void End()
         {
-            CityContext.context._events.Remove(this);
-            foreach (PersonOfInterest poi in CityContext.context._pois)
-            {
-                poi.affectedByEvents.Remove(this);
-            }
+            _all.Remove(this);
+            city.activeEvents.Remove(this);
         }
 
         public static void Tick()
         {
-            foreach (ActiveEvent activeEvent in CityContext.context._events.ToArray())
+            foreach (ActiveEvent activeEvent in _all.ToArray())
             {
                 if (activeEvent.power < 100)
                 {
                     activeEvent.power += 5;
                 }
             }
-            if (CityContext.context.random.RollXdY(1, 100) < 7)
-            {
-                ActiveEvent ae = new ActiveEvent();
-                ae.name = "Toxite Riots";
-            }
         }
 
         public void Reduce(int goalPower)
         {
             power -= goalPower;
-            if (CityContext.context.random.RollXdY(1, 100) > power)
+            if (RandomCustom.instance.PercentChanceOfSuccess(100 - power))
             {
                 End();
             }
